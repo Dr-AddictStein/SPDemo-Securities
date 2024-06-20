@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="w-[94%] mx-auto flex justify-between mt-5">
                 <div className="flex gap-2">
                     <div>
-                        <img src="vite.svg" alt="" />
+                        <img className="w-[55px]" src="logo.png" alt="" />
                     </div>
                     <div className="font-semibold">
                         <h3 className="text-2xl">SPDemo Securities & Futures</h3>
