@@ -1,0 +1,30 @@
+{
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "data": {
+        "resultData": [
+            [
+                {
+                    "acc_id": "128622",
+                    "acc_no": "A123456",
+                    "ccy": "HKD",
+                    "description": "AutoAudit_20240104095101_Transfer to Securities A/C(16693567)_cash out CONVERT HK-HKD TO USD@7.83280042",
+                    "bus_date": "2024-01-04",
+                    "amount": "7000",
+                    "ref_no": "",
+                    "fv_id": "0",
+                    "is_chq": "1",
+                    "bank_ac": "",
+                    "bkac_id": "0",
+                    "order_id": "0",
+                    "user_name": "ADMIN",
+                    "approved": "1",
+                    "approver": "SPADMIN",
+                    "approve_time": "2024-01-24 15:42:21",
+                    "import": "9",
+                    "sys_date": "2024-01-04"
+                }
+            ]
+        ]
+    }
+}
