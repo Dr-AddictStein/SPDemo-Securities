@@ -20,7 +20,7 @@
                 "trade_limit_expdate": "0000-00-00",
                 "margin_limit": 100000,
                 "sex": "M",
-                "idno": 1234567890123
+                "idno": 1234567890123,
                 "idno_type": 2,
                 "idno_issue_place": "HK",
                 "occupation_id": 0,

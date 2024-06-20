@@ -1,5 +1,34 @@
+import { useEffect, useState } from "react";
 
 const Temp2 = () => {
+
+    const [ccyList, setCcyList] = useState([]);
+
+    useEffect(() => {
+        const fetchVendors = async () => {
+            try {
+                const response = await fetch("/ccy.json");
+                if (!response.ok) {
+                    throw new Error("Could not fetch");
+                }
+                const data = await response.json();
+
+                setCcyList(data.data.resultData);
+            } catch (error) {
+                console.log("could not fetch Vendors", error);
+            }
+        };
+        fetchVendors();
+    }, []);
+
+    useEffect(() => {
+        console.log("APAPAPAP", ccyList)
+    }, [ccyList])
+
+
+
+
+
     return (
         <div className="w-[94%] mx-auto">
             <div className="flex justify-between border border-black p-5 my-5">
@@ -49,22 +78,17 @@ const Temp2 = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* row 1 */}
-                                <tr>
-                                    <td>
-                                        <p>Exchange Rate (HKD)</p>
-                                        <p>對換匯率 (HKD)</p>
-                                    </td>
-                                    <td>1.000000</td>
-                                </tr>
-                                {/* row 2 */}
-                                <tr>
-                                    <td>
-                                        <p>Exchange Rate (HKD)</p>
-                                        <p>對換匯率 (HKD)</p>
-                                    </td>
-                                    <td>1.000000</td>
-                                </tr>
+                                {
+                                    ccyList.map((ld) => {
+                                        return <tr>
+                                            <td>
+                                                <p>{`Exchange Rate (${ld.ccy})`}</p>
+                                                <p>{`對換匯率 (${ld.ccy})`}</p>
+                                            </td>
+                                            <td>{ld.ex_rate}</td>
+                                        </tr>
+                                    })
+                                }
                             </tbody>
                         </table>
                     </div>
