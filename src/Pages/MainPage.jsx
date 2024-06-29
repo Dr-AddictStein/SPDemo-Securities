@@ -54,7 +54,7 @@ const MainPage = () => {
           <div>
             <div className="collapse collapse-plus  ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2  border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1  border-custom-blue">
                 ACCOUNT INFORMATION 帳戶資料
               </div>
               <div className="collapse-content mt-2">
@@ -94,7 +94,7 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2 border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 TRADE CONFIRMATION 成交確認
               </div>
               <div className="collapse-content mt-2">
@@ -200,7 +200,7 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2 border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 CLOSED POSITIONS 平倉合約
               </div>
               <div className="collapse-content mt-2">
@@ -209,95 +209,120 @@ const MainPage = () => {
                     {/* head */}
                     <thead className="font-bold">
                       <tr>
+                        <th rowSpan={2}>
+                          Description <br />
+                          商品合約內容
+                        </th>
+                        <th
+                          colSpan={5}
+                          className="text-center border-b border-custom-blue "
+                        >
+                          Open Order <br /> 成交日期
+                        </th>
+
+                        <th
+                          colSpan={5}
+                          className="text-center border-b border-custom-blue"
+                        >
+                          Closed Order <br /> 交易参考
+                        </th>
+                        <th rowSpan={2}>
+                          Currency <br /> 貨幣
+                        </th>
+                        <th rowSpan={2}>
+                          Gross Profit / (Loss) <br /> 平倉盈/(虧)
+                        </th>
+                      </tr>
+                      <tr className="font-bold ">
                         <th>
                           Trade Date <br /> 成交日期
                         </th>
+
                         <th>
-                          Description <br /> 描述
+                          Ref. No <br /> 交易参考
                         </th>
-                        <th>
-                          Trade Ref. <br /> 交易参考
-                        </th>
-                        <th>
-                          T+1 <br /> T+1
-                        </th>
-                        <th>
-                          Day/Overnight <br /> 日间/隔夜
-                        </th>
+
                         <th>
                           Buy <br /> 买入
                         </th>
                         <th>
                           Sell <br /> 卖出
                         </th>
-                        <th>
-                          Buy Price <br /> 买入价
+
+                        <th >
+                          Trade Price <br /> 卖出价
                         </th>
                         <th>
-                          Sell Price <br /> 卖出价
+                          Trade Date <br /> 成交日期
+                        </th>
+
+                        <th>
+                          Ref. No <br /> 交易参考
+                        </th>
+
+                        <th>
+                          Buy <br /> 买入
                         </th>
                         <th>
-                          Premium Received/Paid <br /> 收到/支付的保费
+                          Sell <br /> 卖出
                         </th>
+
                         <th>
-                          Currency <br /> 货币
-                        </th>
-                        <th>
-                          Commission <br /> 佣金
-                        </th>
-                        <th>
-                          Exch. Fee & Levy <br /> 交易费及征费
+                          Trade Price <br /> 卖出价
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {/* row 1 */}
                       <tr className="hover">
-                        <td>06JUL2021</td>
                         <td>HSI 202107</td>
+                        <td>06JUL2021</td>
                         <td>16376</td>
-                        <td>Y</td>
-                        <td>Overnight</td>
                         <td>2</td>
                         <td></td>
                         <td>23,400</td>
+
+                        <td>06JUL2021</td>
+                        <td>16376</td>
                         <td></td>
-                        <td></td>
-                        <td>HDK</td>
-                        <td>140.00</td>
-                        <td>21.08</td>
+                        <td>2</td>
+                        <td>23,400</td>
+                        <td>HKD</td>
+                        <td>454,600.00</td>
                       </tr>
                       {/* row 2 */}
                       <tr className="hover">
+                        <td>HSI 202107</td>
                         <td>06JUL2021</td>
-                        <td>HSI 202108</td>
-                        <td>16377</td>
-                        <td>N</td>
-                        <td>Day</td>
+                        <td>16376</td>
+                        <td>2</td>
                         <td></td>
+                        <td>23,400</td>
+
+                        <td>06JUL2021</td>
+                        <td>16376</td>
                         <td>1</td>
                         <td></td>
                         <td>23,400</td>
-                        <td></td>
-                        <td>HDK</td>
-                        <td>50.00</td>
-                        <td>10.54</td>
+                        <td>HKD</td>
+                        <td>454,600.00</td>
                       </tr>
                       {/* row 3 */}
                       <tr>
                         <td>Total 總計:</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+
                         <td>2</td>
                         <td>1</td>
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
                         <td>HDK</td>
-                        <td>50.00</td>
-                        <td>10.54</td>
+                        <td>230,400.00</td>
                       </tr>
                     </tbody>
                   </table>
@@ -306,7 +331,7 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2 border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 EXPIRED TRADE 到期合約
               </div>
               <div className="collapse-content mt-2">
@@ -408,7 +433,7 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2 border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 FUND MOVEMENT 資金流動
               </div>
               <div className="collapse-content mt-2">
@@ -501,11 +526,11 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus  ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2  border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1  border-custom-blue">
                 DAILY ACCOUNT SUMMARY 每日戶口總結
               </div>
               <div className="collapse-content mt-2">
-                <div className="flex justify-between items-center border-b-2 font-bold  border-custom-blue">
+                <div className="flex justify-between items-center border-b-1 font-bold  border-custom-blue">
                   <p className="flex flex-col">
                     <span>CCY</span>
                     <span> 貨幣</span>
@@ -664,7 +689,7 @@ const MainPage = () => {
             </div>
             <div className="collapse collapse-plus ">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-custom-blue font-bold border-b-2 border-custom-blue">
+              <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 CONTRACT INFORMATION 合約資料
               </div>
               <div className="collapse-content mt-2">
@@ -703,8 +728,12 @@ const MainPage = () => {
                     <tbody>
                       {/* row 1 */}
                       <tr className="hover">
-                        <td>HKEX Hong Kong <br /> Futures Exchange</td>
-                        <td>HSI Hang Seng <br /> Index OPT</td>
+                        <td>
+                          HKEX Hong Kong <br /> Futures Exchange
+                        </td>
+                        <td>
+                          HSI Hang Seng <br /> Index OPT
+                        </td>
 
                         <td>2.00</td>
                         <td>00</td>
@@ -713,10 +742,6 @@ const MainPage = () => {
                         <td>Per Span</td>
                         <td>Per Span</td>
                       </tr>
-                   
-                   
-                      
-                   
                     </tbody>
                   </table>
                 </div>
