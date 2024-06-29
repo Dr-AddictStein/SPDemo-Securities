@@ -57,7 +57,7 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1  border-custom-blue">
                 ACCOUNT INFORMATION 帳戶資料
               </div>
-              <div className="collapse-content mt-2">
+              <div className="collapse-content  overflow-x-auto mt-2">
                 <div className="flex justify-between items-center">
                   <p className="flex flex-col">
                     <span>Statement Date</span>
@@ -97,8 +97,8 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 TRADE CONFIRMATION 成交確認
               </div>
-              <div className="collapse-content mt-2">
-                <div className="overflow-x-auto max-w-full">
+              <div className="collapse-content  overflow-x-auto mt-2  ">
+                <div className="max-w-full">
                   <table className="table table-zebra min-w-max">
                     {/* head */}
                     <thead className="font-bold">
@@ -203,8 +203,8 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 CLOSED POSITIONS 平倉合約
               </div>
-              <div className="collapse-content mt-2">
-                <div className="overflow-x-auto max-w-full">
+              <div className="collapse-content  overflow-x-auto mt-2">
+                <div className=" max-w-full">
                   <table className="table table-zebra min-w-max">
                     {/* head */}
                     <thead className="font-bold">
@@ -249,7 +249,7 @@ const MainPage = () => {
                           Sell <br /> 卖出
                         </th>
 
-                        <th >
+                        <th>
                           Trade Price <br /> 卖出价
                         </th>
                         <th>
@@ -334,8 +334,8 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 EXPIRED TRADE 到期合約
               </div>
-              <div className="collapse-content mt-2">
-                <div className="overflow-x-auto max-w-full">
+              <div className="collapse-content  overflow-x-auto mt-2">
+                <div className=" max-w-full">
                   <table className="table table-zebra min-w-max">
                     {/* head */}
                     <thead className="font-bold">
@@ -436,8 +436,8 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 FUND MOVEMENT 資金流動
               </div>
-              <div className="collapse-content mt-2">
-                <div className="overflow-x-auto max-w-full">
+              <div className="collapse-content  overflow-x-auto mt-2">
+                <div className=" max-w-full">
                   <table className="table table-zebra min-w-max">
                     {/* head */}
                     <thead className="font-bold">
@@ -529,7 +529,7 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1  border-custom-blue">
                 DAILY ACCOUNT SUMMARY 每日戶口總結
               </div>
-              <div className="collapse-content mt-2">
+              <div className="collapse-content  overflow-x-auto mt-2">
                 <div className="flex justify-between items-center border-b-1 font-bold  border-custom-blue">
                   <p className="flex flex-col">
                     <span>CCY</span>
@@ -692,8 +692,8 @@ const MainPage = () => {
               <div className="collapse-title text-custom-blue font-bold border-b-1 border-custom-blue">
                 CONTRACT INFORMATION 合約資料
               </div>
-              <div className="collapse-content mt-2">
-                <div className="overflow-x-auto max-w-full">
+              <div className="collapse-content  overflow-x-auto mt-2">
+                <div className=" max-w-full">
                   <table className="table table-zebra min-w-max">
                     {/* head */}
                     <thead className="font-bold">
