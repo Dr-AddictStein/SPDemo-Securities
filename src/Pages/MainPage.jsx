@@ -109,20 +109,23 @@ const MainPage = () => {
 
       for (let i = 0; i < doneTrade.length; i++) {
         let desc;
+        let fv_id;
         totalComm = totalComm + parseFloat(doneTrade[i].comm)
         totalLevy = totalLevy + parseFloat(doneTrade[i].levy)
         for (let j = 0; j < inOut.length; j++) {
           if (inOut[j].acc_id === doneTrade[i].acc_id) {
             desc = inOut[j].description;
+            fv_id = inOut[j].fv_id;
             break;
           }
         }
-        const dat = { ...doneTrade[i], description: desc };
+        const dat = { ...doneTrade[i], description: desc, fv_id: fv_id };
         dex.push(dat);
       }
 
       dex.push({
         trd_date: "Total 總計:",
+        fv_id:"Total 總計:",
         comm: totalComm,
         levy: totalLevy,
       })
@@ -553,61 +556,23 @@ const MainPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="hover">
-                      <td>974</td>
-                      <td>06JUL2021</td>
+                    {
+                      tradeTable.map((dat) => {
+                        return (
+                          <tr className="hover">
+                            <td>{dat.fv_id}</td>
+                            <td>{dat.bus_date}</td>
 
-                      <td></td>
-                      <td></td>
+                            <td>MISSING</td>
+                            <td>{dat.description}</td>
 
-                      <td>HDK</td>
-                      <td>(1,000,000.00)</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr className="hover">
-                      <td>974</td>
-                      <td>06JUL2021</td>
+                            <td>{dat.ccy_trd}</td>
+                            <td>{dat.comm}</td>
+                          </tr>
 
-                      <td></td>
-                      <td></td>
-
-                      <td>HDK</td>
-                      <td>1,000,000.00</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr className="hover">
-                      <td>974</td>
-                      <td>06JUL2021</td>
-
-                      <td></td>
-                      <td></td>
-
-                      <td>HDK</td>
-                      <td>1,000,000.00</td>
-                    </tr>
-                    {/* Row 4 */}
-                    <tr className="hover">
-                      <td>974</td>
-                      <td>06JUL2021</td>
-
-                      <td></td>
-                      <td></td>
-
-                      <td>HDK</td>
-                      <td>2,000.00</td>
-                    </tr>
-                    {/* Row 5 */}
-                    <tr>
-                      <td>Total 總計:</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-
-                      <td>HDK</td>
-
-                      <td>(798,000.00)</td>
-                    </tr>
+                        )
+                      })
+                    }
                   </tbody>
                 </table>
               </div>
