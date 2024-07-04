@@ -1,0 +1,143 @@
+{
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "data": {
+        "resultData": [
+            {
+                "ccy": "USD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "7.829000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "JPY",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "0.052206",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "HKD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "1.000000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "CNY",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "1.086200",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "EUR",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "8.517000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1477991237"
+            },
+            {
+                "ccy": "GBP",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "9.915800",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "CHF",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "8.051000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1438560435"
+            },
+            {
+                "ccy": "CAD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "5.779250",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "SGD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "5.827750",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "KRW",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "0.007407",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1456882329"
+            },
+            {
+                "ccy": "MYR",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "1.852300",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1477991237"
+            },
+            {
+                "ccy": "TWD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "1.000000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "0"
+            },
+            {
+                "ccy": "THB",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "1.000000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "0"
+            },
+            {
+                "ccy": "AUD",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "5.115450",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            },
+            {
+                "ccy": "USX",
+                "ccy_ex": "HKD",
+                "comp_no": "1",
+                "ccy_base": "1",
+                "ex_rate": "7.829000",
+                "acc_rate": "0.000000",
+                "lastupd_date": "1709528508"
+            }
+        ]
+    }
+}

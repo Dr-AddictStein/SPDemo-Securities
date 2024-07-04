@@ -1,0 +1,13 @@
+{
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "data": {
+        "resultData": [
+            [
+                {
+                    "sys_date": "2024-01-04"
+                }
+            ]
+        ]
+    }
+}

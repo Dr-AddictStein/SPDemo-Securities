@@ -37,19 +37,21 @@
 						"US_tax_pay" : "美國納稅人",
 						"US_ben_owner" : "美國實益所有人",
 						"FATCA_waiver" : "豁免FATCA申報人士",
-						"TIN_code : "納稅識別號碼(TIN)",
+						"TIN_code" : "納稅識別號碼(TIN)",
 						"GIIN_code" : "全球中介機構識別碼(GIIN)",
-						"FATCA_form_type : "美國稅表類型(W8/W9)",
-						"w8_form_expiry_date : "FATCA簽署有效日期",
-						"fund_ac : "基金戶口號碼",
-						"third_party_author_ind : "第三方授權",
-						"discretionary_ind : "委託經紀全權代理",
-						"discret_exp_date : "委託帳戶有效日期",
-						"authorized_person_dt : "第三方授權資料",
-						"std_author_sign_date : "常設授權簽署日期",
-						"id_passport_expiry_date : "身份証明文件有效日期",
-						"is_direct_mkt_refuse : "拒絕直接營銷",
-						"cgid : "客戶類型",
+						"FATCA_form_type" : "美國稅表類型(W8/W9)",
+						"w8_form_expiry_date" : "FATCA簽署有效日期",
+						"fund_ac" : "基金戶口號碼",
+						"third_party_author_ind" : "第三方授權",
+						"discretionary_ind" : "委託經紀全權代理",
+						"discret_exp_date" : "委託帳戶有效日期",
+						"authorized_person_dt" : "第三方授權資料",
+						"std_author_sign_date" : "常設授權簽署日期",
+						"id_passport_expiry_date" : "身份証明文件有效日期",
+						"is_direct_mkt_refuse" : "拒絕直接營銷",
+						"cgid" : "客戶類型",
+						"AE_id" : "經紀編號",
+						"AE_Name" : "經紀名稱"
                 }, 
 				"getClientMast" : {
                         "acc_id" : "客戶帳號ID",
@@ -85,22 +87,24 @@
 						"US_citizen" : "美國公民",
 						"US_residence" : "美國居留權",
 						"US_company" : "美國註冊公司",
-						"US_tax_pay : "美國納稅人",
-						"US_ben_owner : "美國實益所有人",
-						"FATCA_waiver : "豁免FATCA申報人士",
-						"TIN_code : "納稅識別號碼(TIN)",
-						"GIIN_code : "全球中介機構識別碼(GIIN)",
-						"FATCA_form_type : "美國稅表類型(W8/W9)",
-						"w8_form_expiry_date : "FATCA簽署有效日期",
-						"fund_ac : "基金戶口號碼",
-						"third_party_author_ind : "第三方授權",
-						"discretionary_ind : "委託經紀全權代理",
-						"discret_exp_date : "委託帳戶有效日期",
-						"authorized_person_dt : "第三方授權資料",
-						"std_author_sign_date : "常設授權簽署日期",
-						"id_passport_expiry_date : "身份証明文件有效日期",
-						"is_direct_mkt_refuse : "拒絕直接營銷",
-						"cgid : "客戶類型",
+						"US_tax_pay" : "美國納稅人",
+						"US_ben_owner" : "美國實益所有人",
+						"FATCA_waiver" : "豁免FATCA申報人士",
+						"TIN_code" : "納稅識別號碼(TIN)",
+						"GIIN_code" : "全球中介機構識別碼(GIIN)",
+						"FATCA_form_type" : "美國稅表類型(W8/W9)",
+						"w8_form_expiry_date" : "FATCA簽署有效日期",
+						"fund_ac" : "基金戶口號碼",
+						"third_party_author_ind" : "第三方授權",
+						"discretionary_ind" : "委託經紀全權代理",
+						"discret_exp_date" : "委託帳戶有效日期",
+						"authorized_person_dt" : "第三方授權資料",
+						"std_author_sign_date" : "常設授權簽署日期",
+						"id_passport_expiry_date" : "身份証明文件有效日期",
+						"is_direct_mkt_refuse" : "拒絕直接營銷",
+						"cgid" : "客戶類型",
+						"AE_id" : "經紀編號",
+						"AE_Name" : "經紀名稱"
 				}, 
 				"getClientBal" : {
                         "acc_id" : "客戶帳號ID",
@@ -135,6 +139,10 @@
 						"T2_unsettled" : "股票 T+2 及以上待交收金額",
 						"monthend_post_int" : "月尾利息存入/(支出)",
 						"sys_date" : "系統日期",
+						"MarginRate" : "风险率",
+						"TotalEquity" : "总资产",
+						"NetAssetValue" : "总资产淨值",
+						"TotalFee" : "交易費用及徵費"
 				},
 				"apiClientCloseOut" : {
                         "close_id" : "平倉指示編號",
@@ -189,7 +197,7 @@
 						"open_bs" : "開倉買賣方向(買/賣)",
 						"set_date" : "結算日期",
 						"open_buysell" : "開倉買/賣",
-						"close_buysell" : "平倉買/賣",
+						"close_buysell" : "平倉買/賣"
 				},
 				"apiClientPosition" : {
                         "order_id" : "未平倉合約編號",
@@ -210,7 +218,7 @@
 						"fx_rate_chrg" : "結算貨幣匯率",
 						"comm_code_open" : "未平倉合約商品代號",
 						"ae_id" : "所屬經紀id",
-						"ae_code" : 所屬經紀編號",
+						"ae_code" : "所屬經紀編號",
 						"trade_ref" : "未平倉合約備註",
 						"trade_remarks" : "未平倉合約備註",
 						"acc_no" : "客戶戶口編號",
@@ -230,16 +238,16 @@
 						"carry_trade_days" : "LME調期交易日數",
 						"opt_prem" : "期權金",
 						"opt_value" : "期權價值",
-						"sys_date" : "系統日期",
+						"sys_date" : "系統日期"
 				},
 				"getExchangeRate" : {
                         "ccy" : "貨幣",
 						"ccy_ex" : "轉換貨幣",
 						"ex_rate" : "匯率",
-						"lastupd_date" : "最後更新日期",
+						"lastupd_date" : "最後更新日期"
 				},
 				"getSysDate" : {
-                        "sys" : "系統日期",
+                        "sys_date" : "系統日期"
 				},
 				"getAccContact" : {
                         "acc_id" :"客戶帳號ID",
@@ -263,7 +271,7 @@
 						"address1_chs" : "中文簡體地址(行一)",
 						"address2_chs" : "中文簡體地址(行二)",
 						"address3_chs" : "中文簡體地址(行三)",
-						"address4_chs" : "中文簡體地址(行四)",
+						"address4_chs" : "中文簡體地址(行四)"
 				},
 				"getClientDoneTrade" : {
                         "order_id" : "成交合約編號",
@@ -301,6 +309,8 @@
 						"levy" : "交易徵費",
 						"rebate" : "回佣",
 						"other_fee" : "其他費用",
+						"DayON" : "日間/隔夜",
+						"Totalfee" : "交易費用及徵費"
 				},
 				"getClientfundinout" : {
 						"acc_id" : "客戶帳號ID",
@@ -316,7 +326,6 @@
 						"approved" : "批核狀況",
 						"approver" : "現金轉帳批核人",
 						"approver_time" : "批核時間",
-						"sys_date" : "系統日期",
+						"sys_date" : "系統日期"
 			}
         }
-			

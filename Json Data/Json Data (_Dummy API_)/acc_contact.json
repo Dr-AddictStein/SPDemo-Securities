@@ -1,0 +1,45 @@
+{
+    "resultCode": 0,
+    "resultMessage": "SUCCESS",
+    "data": {
+        "resultData": [
+            {
+                "comp_no": 1,
+                "acc_id": 128622,
+                "contact_id": 262050,
+                "cname": "Chan Tai Man",
+                "cname_utf": "陳大文",
+                "address1": "香港香港島東區杏花邨杏花新城212號鋪",
+                "address2": "",
+                "address3": "",
+                "address4": "",
+                "address1_utf": "",
+                "address2_utf": "",
+                "address3_utf": "",
+                "address4_utf": "",
+                "mobile_phone": ,
+                "home_phone": ,
+                "office_phone": "",
+                "sms_phone": "",
+                "fax": "",
+                "allowfaxdaily": 0,
+                "allowfaxmonthly": 0,
+                "allowfaxconfirm": 0,
+                "email": "",
+                "allowemaildaily": 0,
+                "allowemailmonthly": 0,
+                "allowemailconfirm": 0,
+                "allowprintdaily": 0,
+                "allowprintmonthly": 0,
+                "allowprintconfirm": 0,
+                "is_mailing": 0,
+                "main_contact": 1,
+                "cname_chs": "",
+                "address1_chs": "",
+                "address2_chs": "",
+                "address3_chs": "",
+                "address4_chs": "\r"
+            }
+        ]
+    }
+}
