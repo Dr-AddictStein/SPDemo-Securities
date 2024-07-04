@@ -6,8 +6,10 @@ const MainPage = () => {
   const [sysDate, setSysDate] = useState([]);
   const [doneTrade, setDoneTrade] = useState([]);
   const [inOut, setInOut] = useState([]);
+  const [closeOut, setCloseOut] = useState([]);
 
   const [tradeTable, setTradeTable] = useState([]);
+  const [closedTable, setClosedTable] = useState([]);
 
   useEffect(() => {
     const fetchVendors = async () => {
@@ -62,10 +64,24 @@ const MainPage = () => {
         console.log("could not fetch Vendors", error);
       }
     };
+    const fetchCloseOut = async () => {
+      try {
+        const response = await fetch("/closecout.json");
+        if (!response.ok) {
+          throw new Error("Could not fetch");
+        }
+        const data = await response.json();
+
+        setCloseOut(data.data.resultData);
+      } catch (error) {
+        console.log("could not fetch Vendors", error);
+      }
+    };
     fetchVendors();
     fetchDate();
     fetchDoneTrade();
     fetchInOut();
+    fetchCloseOut();
   }, []);
 
   useEffect(() => {
@@ -76,17 +92,25 @@ const MainPage = () => {
   }, [sysDate])
   useEffect(() => {
     console.log("Done", doneTrade)
-  }, [sysDate])
+  }, [doneTrade])
   useEffect(() => {
     console.log("intout", inOut)
-  }, [sysDate])
+  }, [inOut])
+  useEffect(() => {
+    console.log("closeout", closeOut)
+  }, [closeOut])
 
   useEffect(() => {
     if (doneTrade && inOut) {
       let dex = [];
 
+      let totalComm = 0.0;
+      let totalLevy = 0.0;
+
       for (let i = 0; i < doneTrade.length; i++) {
         let desc;
+        totalComm = totalComm + parseFloat(doneTrade[i].comm)
+        totalLevy = totalLevy + parseFloat(doneTrade[i].levy)
         for (let j = 0; j < inOut.length; j++) {
           if (inOut[j].acc_id === doneTrade[i].acc_id) {
             desc = inOut[j].description;
@@ -97,13 +121,51 @@ const MainPage = () => {
         dex.push(dat);
       }
 
+      dex.push({
+        trd_date: "Total 總計:",
+        comm: totalComm,
+        levy: totalLevy,
+      })
+
       setTradeTable(dex);
     }
   }, [doneTrade, inOut])
 
   useEffect(() => {
+    if (doneTrade && inOut) {
+      let dex = [];
+
+      let totalProf = 0.0;
+
+      for (let i = 0; i < closeOut.length; i++) {
+        let desc;
+        totalProf = totalProf + parseFloat(closeOut[i].trade_pl);
+
+        for (let j = 0; j < inOut.length; j++) {
+          if (inOut[j].acc_id === closeOut[i].acc_id) {
+            desc = inOut[j].description;
+            break;
+          }
+        }
+        const dat = { ...closeOut[i], description: desc };
+        dex.push(dat);
+      }
+
+      dex.push({
+        description: "Total 總計:",
+        trade_pl: totalProf
+      })
+
+      setClosedTable(dex);
+    }
+  }, [closeOut, inOut])
+
+  useEffect(() => {
     console.log("table 2", tradeTable);
   }, [tradeTable])
+  useEffect(() => {
+    console.log("table 3", closedTable);
+  }, [closedTable])
 
 
   return (
@@ -354,57 +416,28 @@ const MainPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="hover">
-                      <td>HSI 202107</td>
-                      <td>06JUL2021</td>
-                      <td>16376</td>
-                      <td>2</td>
-                      <td></td>
-                      <td>23,400</td>
+                    {
+                      closedTable.map((dat) => {
+                        return (
+                          <tr className="hover">
+                            <td>{dat.description}</td>
+                            <td>{dat.open_order_date}</td>
+                            <td>{dat.order_id_open}</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
+                            <td>{dat.price_open}</td>
 
-                      <td>06JUL2021</td>
-                      <td>16376</td>
-                      <td></td>
-                      <td>2</td>
-                      <td>23,400</td>
-                      <td>HKD</td>
-                      <td>454,600.00</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr className="hover">
-                      <td>HSI 202107</td>
-                      <td>06JUL2021</td>
-                      <td>16376</td>
-                      <td>2</td>
-                      <td></td>
-                      <td>23,400</td>
-
-                      <td>06JUL2021</td>
-                      <td>16376</td>
-                      <td>1</td>
-                      <td></td>
-                      <td>23,400</td>
-                      <td>HKD</td>
-                      <td>454,600.00</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                      <td>Total 總計:</td>
-                      <td></td>
-                      <td></td>
-
-                      <td>2</td>
-                      <td>1</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td></td>
-                      <td>HDK</td>
-                      <td>230,400.00</td>
-                    </tr>
+                            <td>{dat.close_order_date}</td>
+                            <td>{dat.order_id_close}</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
+                            <td>{dat.price_close}</td>
+                            <td>{dat.ccy_trd}</td>
+                            <td>{dat.trade_pl}</td>
+                          </tr>
+                        )
+                      })
+                    }
                   </tbody>
                 </table>
               </div>
