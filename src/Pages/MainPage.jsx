@@ -493,53 +493,28 @@ const MainPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="hover">
-                      <td>06JUL2021</td>
-                      <td>16376</td>
-                      <td>HSI 202107</td>
-                      <td>Cash Selt</td>
-                      <td></td>
-                      <td>2</td>
+                    {
+                      tradeTable.map((dat) => {
+                        return (
+                          <tr className="hover">
+                            <td>{dat.trd_date}</td>
+                            <td>{dat.ref}</td>
+                            <td>{dat.description}</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
 
-                      <td></td>
-                      <td>27,946</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
 
-                      <td>HDK</td>
-                      <td>100.00</td>
-                      <td>20.00</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr className="hover">
-                      <td>06JUL2021</td>
-                      <td>16504</td>
-                      <td>HSI 202108</td>
-                      <td>Cash Selt</td>
-                      <td>1</td>
-                      <td></td>
+                            <td>{dat.ccy_trd}</td>
+                            <td>{dat.comm}</td>
+                            <td>{dat.levy}</td>
+                          </tr>
 
-                      <td>27,884</td>
-                      <td></td>
-
-                      <td>HDK</td>
-                      <td>50.00</td>
-                      <td>10.00</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                      <td>Total 總計:</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>HDK</td>
-                      <td>150.00</td>
-                      <td>30.00</td>
-                    </tr>
+                        )
+                      })
+                    }
                   </tbody>
                 </table>
               </div>
