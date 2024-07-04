@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 const MainPage = () => {
 
   const [ccyList, setCcyList] = useState([]);
-  const [sysDate,setSysDate] = useState([]);
+  const [sysDate, setSysDate] = useState([]);
+  const [doneTrade, setDoneTrade] = useState([]);
+  const [inOut, setInOut] = useState([]);
+
+  const [tradeTable, setTradeTable] = useState([]);
 
   useEffect(() => {
     const fetchVendors = async () => {
@@ -32,8 +36,36 @@ const MainPage = () => {
         console.log("could not fetch Vendors", error);
       }
     };
+    const fetchDoneTrade = async () => {
+      try {
+        const response = await fetch("/done_trade.json");
+        if (!response.ok) {
+          throw new Error("Could not fetch");
+        }
+        const data = await response.json();
+
+        setDoneTrade(data.data.resultData[0]);
+      } catch (error) {
+        console.log("could not fetch Vendors", error);
+      }
+    };
+    const fetchInOut = async () => {
+      try {
+        const response = await fetch("/fundinout.json");
+        if (!response.ok) {
+          throw new Error("Could not fetch");
+        }
+        const data = await response.json();
+
+        setInOut(data.data.resultData[0]);
+      } catch (error) {
+        console.log("could not fetch Vendors", error);
+      }
+    };
     fetchVendors();
     fetchDate();
+    fetchDoneTrade();
+    fetchInOut();
   }, []);
 
   useEffect(() => {
@@ -42,6 +74,36 @@ const MainPage = () => {
   useEffect(() => {
     console.log("Date", sysDate)
   }, [sysDate])
+  useEffect(() => {
+    console.log("Done", doneTrade)
+  }, [sysDate])
+  useEffect(() => {
+    console.log("intout", inOut)
+  }, [sysDate])
+
+  useEffect(() => {
+    if (doneTrade && inOut) {
+      let dex = [];
+
+      for (let i = 0; i < doneTrade.length; i++) {
+        let desc;
+        for (let j = 0; j < inOut.length; j++) {
+          if (inOut[j].acc_id === doneTrade[i].acc_id) {
+            desc = inOut[j].description;
+            break;
+          }
+        }
+        const dat = { ...doneTrade[i], description: desc };
+        dex.push(dat);
+      }
+
+      setTradeTable(dex);
+    }
+  }, [doneTrade, inOut])
+
+  useEffect(() => {
+    console.log("table 2", tradeTable);
+  }, [tradeTable])
 
 
   return (
@@ -190,54 +252,28 @@ const MainPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="hover">
-                      <td>06JUL2021</td>
-                      <td>HSI 202107</td>
-                      <td>16376</td>
-                      <td>Y</td>
-                      <td>Overnight</td>
-                      <td>2</td>
-                      <td></td>
-                      <td>23,400</td>
-                      <td></td>
-                      <td></td>
-                      <td>HDK</td>
-                      <td>140.00</td>
-                      <td>21.08</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr className="hover">
-                      <td>06JUL2021</td>
-                      <td>HSI 202108</td>
-                      <td>16377</td>
-                      <td>N</td>
-                      <td>Day</td>
-                      <td></td>
-                      <td>1</td>
-                      <td></td>
-                      <td>23,400</td>
-                      <td></td>
-                      <td>HDK</td>
-                      <td>50.00</td>
-                      <td>10.54</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                      <td>Total 總計:</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>HDK</td>
-                      <td>50.00</td>
-                      <td>10.54</td>
-                    </tr>
+                    {
+                      tradeTable.map((dat) => {
+                        return (
+                          <tr className="hover">
+                            <td>{dat.trd_date}</td>
+                            <td>{dat.description}</td>
+                            <td>{dat.ref}</td>
+                            <td>{dat.T1_trade}</td>
+                            <td>{dat.day_qty}</td>
+                            <td>{dat.buy_sell}</td>
+                            <td>{dat.buy_sell}</td>
+                            <td>MISSING</td>
+                            <td>MISSING</td>
+                            <td>{dat.opt_prem}</td>
+                            <td>{dat.ccy_trd}</td>
+                            <td>{dat.comm}</td>
+                            <td>{dat.levy}</td>
+                          </tr>
+                        )
+                      })
+                    }
+
                   </tbody>
                 </table>
               </div>
