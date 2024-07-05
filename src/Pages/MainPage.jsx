@@ -14,7 +14,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const response = await fetch("/clientMast.json");
+        const response = await fetch("../../Json Data/Json Data (_Dummy API_)/clientMast.json");
         if (!response.ok) {
           throw new Error("Could not fetch");
         }
@@ -27,7 +27,7 @@ const MainPage = () => {
     };
     const fetchDate = async () => {
       try {
-        const response = await fetch("/sys_date.json");
+        const response = await fetch("../../Json Data/Json Data (_Dummy API_)/sys_date.json");
         if (!response.ok) {
           throw new Error("Could not fetch");
         }
@@ -40,7 +40,7 @@ const MainPage = () => {
     };
     const fetchDoneTrade = async () => {
       try {
-        const response = await fetch("/done_trade.json");
+        const response = await fetch("../../Json Data/Json Data (_Dummy API_)/done_trade.json");
         if (!response.ok) {
           throw new Error("Could not fetch");
         }
@@ -53,7 +53,7 @@ const MainPage = () => {
     };
     const fetchInOut = async () => {
       try {
-        const response = await fetch("/fundinout.json");
+        const response = await fetch("../../Json Data/Json Data (_Dummy API_)/fundinout.json");
         if (!response.ok) {
           throw new Error("Could not fetch");
         }
@@ -66,7 +66,7 @@ const MainPage = () => {
     };
     const fetchCloseOut = async () => {
       try {
-        const response = await fetch("/closecout.json");
+        const response = await fetch("../../Json Data/Json Data (_Dummy API_)/closecout.json");
         if (!response.ok) {
           throw new Error("Could not fetch");
         }
